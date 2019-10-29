@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "image": "./images/ame.png",
+      "name": "Amethyst"
+    },
+    {
+      "id": 2,
+      "image": "./images/blue.png",
+      "name": "Blue Diamond"
+    },
+    {
+      "id": 3,
+      "image": "./images/buck.png",
+      "name": "Buck"
+    },
+    {
+      "id": 4,
+      "image": "./images/con.png",
+      "name": "Connie"
+    },
+    {
+      "id": 5,
+      "image": "./images/gar.png",
+      "name": "Garnet"
+    },
+    {
+      "id": 6,
+      "image": "./images/greg.png",
+      "name": "Greg"
+    },
+    {
+      "id": 7,
+      "image": "./images/pear.png",
+      "name": "Pearl"
+    },
+    {
+      "id": 8,
+      "image": "./images/ron.png",
+      "name": "Ronaldo"
+    },
+    {
+      "id": 9,
+      "image": "./images/rose.png",
+      "name": "Rose Quartz"
+    },
+    {
+      "id": 10,
+      "image": "./images/ste.png",
+      "name": "Steven"
+    },
+    {
+      "id": 11,
+      "image": "../build/images/white.png",
+      "name": "White Diamond"
+    },
+    {
+      "id": 12,
+      "image": "./images/yellow.png",
+      "name": "Yellow Diamon"
+    }
+  ]
