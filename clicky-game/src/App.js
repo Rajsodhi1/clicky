@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Cards from "./cards.json";
+import imageCards from "./components";
 import Scoreboard from "./components/scoreboard";
 import image from "./public/images";
 
@@ -11,13 +11,61 @@ const shuffle = array => {
   return array;
 }
 
-//handleClick function that listens for a click on an image, sets key of clicked to true for that ID.
-//if that image "clicked=true" alert lose reset game
-//otherwise increase score by 1
-//if score is > 11 alert win, reset game
-//shuffle cards
 
+class App extends Component {
+  state = {
+    images,
+    score: 0,
+    highScore: 0,
+    showAlert: 0,
+    showWins: 0,
+    clickedImages: []
+  };
+  handleScore = () => {
+    this.setState({
+      score: this.state.score + 1
+    });
+  };
 
+  clickedImage = id => {
+    let clickedImages = this.state.clickedImages;
+    let score = this.state.score;
+    let highScore = this.state.highScore;
+    this.setState({
+      showAlert: 0
+    });
+    if (clickedImages.indexOf(id) === -1) {
+      clickedImages.push(id);
+      console.log(clickedImages);
+      this.handleScore();
+      this.shuffleCards();
+    } else if (this.state.score === 10) {
+      this.setState({
+        showWins: 1,
+        score: 0,
+        clickedImages : []
+      });
+    } else {
+      this.setState({
+        score: 0,
+        clickedImages: []
+      });
+      this.setState({
+        showAlert: 1
+      });
+    };
+    if (score > highScore) {
+      this.setState({
+        highScore: score
+      });
+    };
+  }
+
+  shuffleCards = () => {
+    this.setState({
+      images: shuffle(images)
+    });
+  };
 
 render() {
   return (
@@ -25,7 +73,7 @@ render() {
       <Scoreboard />
       <GameBox>
         {this.state.options.map(option => (
-        <Cards 
+        <imageCards 
           handleClick={this.handleClick}
           id={option.id}
           key={option.id}
@@ -38,5 +86,5 @@ render() {
   );
 };
 
-
+}
 export default App;
